@@ -1,2 +1,1 @@
-"# Lazy-Loading-Images" 
-'Lazy Loading Images - The complete guide' 
+"Images are critical for every website and application today." 
