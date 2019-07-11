@@ -17,7 +17,7 @@ How does lazy loading images work?
 Different Techniques for Lazy Loading Images
 - Images on websites can be loaded in two ways
 1. <img> tag
-   Syntax: <img src="" data-src="https://image-download.com/sample.jpg" />
+   Syntax: "<img src="" data-src="https://image-download.com/sample.jpg" />"
    Image loaded using the <img/> tag, the browser uses the 'src' attribute of the tag to trigger the image load.
    Put the image URL in an attribute other than 'src'. When the image enters the viewport pick that image URL and put it in the 'src' attribute.
 
