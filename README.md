@@ -16,14 +16,14 @@ How does lazy loading images work?
 
 Different Techniques for Lazy Loading Images
 - Images on websites can be loaded in two ways
-1. <img> tag
-   Syntax: "<img src="" data-src="https://image-download.com/sample.jpg" />"
-   Image loaded using the <img/> tag, the browser uses the 'src' attribute of the tag to trigger the image load.
-   Put the image URL in an attribute other than 'src'. When the image enters the viewport pick that image URL and put it in the 'src' attribute.
+1. img tag
+	Syntax: img src="" data-src="https://image-						download.com/sample.jpg"
+	Image loaded using the <img/> tag, the browser uses the 	'src' attribute of the tag to trigger the image load.
+	Put the image URL in an attribute other than 'src'. When 	the image enters the viewport pick that image URL and put 	it in the 'src' attribute.
 
-   Ways to check when image enters the viewports:
-	- Trigger Image load using Javascript i.e. Event listeners are used on Scroll, Resize, OrientationChange events in the browser.
-	- Using Intersection Observer API to trigger image loads: Intersection Observer API is a relatively new API in browsers. It makes it simple to detect when an 
+	Ways to check when image enters the viewports:
+	- Trigger Image load using Javascript i.e. Event 	listeners are used on Scroll, Resize, OrientationChange 	events in the browser.
+	- Using Intersection Observer API to trigger image loads: 	Intersection Observer API is a relatively new API in 	browsers. It makes it simple to detect when an 
 	element enters the viewport and take action when it does.
 
 2. CSS Background Images
