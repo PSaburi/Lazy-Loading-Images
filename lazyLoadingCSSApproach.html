@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lazy Loading Images - CSS Approach</title>
+    <script type="text/javascript" src="lazyLoadingCSSApproach.js"></script>
+    <link rel="stylesheet" href="lazyLoadingCSSApproach.css" />
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+</head>
+<body>
+    <div id="container">
+        <h3>Lazy loading CSS background images</h3>
+
+        <p>
+            The Intersection Observer API provides a way to asynchronously observe changes
+            in the intersection of a target with an ancestor element or with a top-level
+            document's viewport.
+            The Intersection Observer API lets code register a callback function that is executed
+            whenever an element they wish to monitor enters or exits another element (or the viewport),
+            or when the amount by which the two intersect changes by a requested amount.
+        </p>
+
+        <p>
+            However, the support for Intersection Observer API is not available across all browsers. 
+            Hence, we need to fallback to the event listener method in browsers where the Intersection 
+            Observer API is not supported.
+        </p>
+
+        <p>
+            To load CSS background images, the browser needs to build the DOM (Document Object Model) tree, 
+            as well as the CSSOM (CSS Object Model) tree, to decide if the CSS style applies to a DOM node 
+            in the current document.
+        </p>
+
+        <p>
+            If the CSS rule specifying the background image does not apply to an element in the document, 
+            then the browser does not load the background image. If the CSS rule is applicable to an 
+            element in the current document, then the browser loads the image.
+        </p>
+
+        <p>
+            The element with ID bg-image has a background-image specified in the CSS. However, when 
+            the class lazy is added to this element, in the CSS we override the background-image property 
+            and set it to none.
+        </p>
+
+        <p>
+            Since the rule, combining #bg-image with .lazy class has a higher preference in CSS than just 
+            #bg-image, the browser applies the property background-image: none to the element initially.
+            When we scroll down, the Intersection Observer (or event listeners) detects that the image is 
+            in the viewport and removes the class lazy. This changes the applicable CSS and applies the 
+            actual background-image property to the element triggering the load of the background image.
+        </p>
+
+        <div id="bg-image" class="lazy"></div>
+
+    </div>
+</body>
+</html>

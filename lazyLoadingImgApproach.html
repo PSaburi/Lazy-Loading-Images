@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,33 +8,66 @@
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </head>
 <body>
-    <p>
-        In this technique, event listerners are used on the <em>
-            scroll, resize
-            and orientationChange
-        </em> events in the browser.
-        When either of the events occur, find all the images on the page
-        that are to be lazy loaded and haven't been loaded yet.
-        From these images, we check which ones are now in the viewport.
-        This is done using the image's top offset, the current document scroll top,
-        and window height.
-        If it has entered the viewport, we pick the URL from <b>data-src</b> attribute
-        and put it in the <b>src</b> attribute.
-        This triggers the image load.
-        We also remove the class <b>lazy</b> that identifies the images to be
-        lazily loaded for events that trigger later.
-        Once all the images are loaded, we remove the event listeners.
-    </p>
+    <div id="container">
+        <h3>Lazy loading Images using img tag</h3>
 
-    <img src="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300" />
-    <img src="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300" />
-    <img src="https://ik.imagekit.io/demo/img/image3.jpg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300" />
-    <img class="lazy" data-src="https://ik.imagekit.io/demo/img/image10.jpeg?tr=w-400,h-300" />
+        <p>
+            The Intersection Observer API provides a way to asynchronously observe changes
+            in the intersection of a target with an ancestor element or with a top-level
+            document's viewport.
+            The Intersection Observer API lets code register a callback function that is executed
+            whenever an element they wish to monitor enters or exits another element (or the viewport),
+            or when the amount by which the two intersect changes by a requested amount.
+        </p>
+
+        <p>
+            However, the support for Intersection Observer API is not available across all browsers.
+            Hence, we need to fallback to the event listener method in browsers where the Intersection
+            Observer API is not supported.
+        </p>
+
+        <p>
+            In the fallback technique, event listerners are used on the <em>
+                scroll, resize
+                and orientationChange
+            </em> events in the browser.
+            When either of the events occur, find all the images on the page
+            that are to be lazy loaded and haven't been loaded yet.
+            From these images, we check which ones are now in the viewport.
+            This is done using the image's top offset, the current document scroll top,
+            and window height.
+            If it has entered the viewport, we pick the URL from <b>data-src</b> attribute
+            and put it in the <b>src</b> attribute.
+            This triggers the image load.
+            We also remove the class <b>lazy</b> that identifies the images to be
+            lazily loaded for events that trigger later.
+            Once all the images are loaded, we remove the event listeners.
+        </p>
+
+        <img src="https://ik.imagekit.io/demo/img/image1.jpeg?tr=w-400,h-300" />
+        <img src="https://ik.imagekit.io/demo/img/image2.jpeg?tr=w-400,h-300" />
+        <img src="https://ik.imagekit.io/demo/img/image3.jpg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image4.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image5.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image6.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image7.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image8.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image9.jpeg?tr=w-400,h-300" />
+        <img class="lazy"
+             src="https://ik.imagekit.io/demo/img/image10.jpeg?tr=w-400,h-300,bl-30,q-50"
+             data-src="https://ik.imagekit.io/demo/img/image10.jpeg?tr=w-400,h-300" />
+    </div>
 </body>
 </html>
